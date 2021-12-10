@@ -40,6 +40,10 @@ public class User {
 	@Size(min = 8, message = "The password must contain at least 8 characters")
 	private String password;
 	
+	private String picture;
+	
+	private String usertype;
+	
 	@OneToMany(mappedBy = "username", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("username")
 	private List<Post> posts;
@@ -94,5 +98,22 @@ public class User {
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
 	}
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
+	public String getUsertype() {
+		return usertype;
+	}
+
+	public void setUsertype(String usertype) {
+		this.usertype = usertype;
+	}
+	
 
 }
